@@ -29,18 +29,30 @@ public class TempConversionWindows extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e){
 	String event = e.getActionCommand();
 	if(event.equals("Convert to Fahreinheit")){
-	    String s =  t.getText();
-	    double result;
-	    result = CtoF(Double.parseDouble(s));
-	    j.setText(Double.toString(result));
+	    try{
+		String s =  t.getText();
+		double result;
+		result = CtoF(Double.parseDouble(s));
+		j.setText(Double.toString(result));
+	    }
+	    catch(NumberFormatException a){
+		j.setText("Numbers Only");
+	    }
+	
+	       
 
 	}
 	    
 	if(event.equals("Convert to Celsius")){
-	    String s = t.getText();
-	    double result;
-	    result=FtoC(Double.parseDouble(s));
-	    j.setText(Double.toString(result));
+	    try{
+		String s = t.getText();
+		double result;
+		result=FtoC(Double.parseDouble(s));
+		j.setText(Double.toString(result));
+	    }
+	    catch(NumberFormatException h){
+		j.setText("Numbers Only");
+	    }
 	}
     }
 		
