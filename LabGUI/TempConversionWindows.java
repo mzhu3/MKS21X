@@ -23,20 +23,24 @@ public class TempConversionWindows extends JFrame implements ActionListener{
 	pane.add(b);
 	pane.add(b2);
 	pane.add(t);
+	j = new JLabel("Converted");
+	pane.add(j);
     }
     public void actionPerformed(ActionEvent e){
 	String event = e.getActionCommand();
 	if(event.equals("Convert to Fahreinheit")){
-	    double s = Integer.parseInt( t.getText());
-	    s = CtoF(s);
-	    j.setText(Double.toString(s));
+	    String s =  t.getText();
+	    double result;
+	    result = CtoF(Double.parseDouble(s));
+	    j.setText(Double.toString(result));
 
 	}
 	    
 	if(event.equals("Convert to Celsius")){
-	    double s = Integer.parseInt(t.getText());
-	    s=FtoC(s);
-	    j.setText(Double.toString(s));
+	    String s = t.getText();
+	    double result;
+	    result=FtoC(Double.parseDouble(s));
+	    j.setText(Double.toString(result));
 	}
     }
 		
