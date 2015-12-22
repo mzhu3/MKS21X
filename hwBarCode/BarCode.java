@@ -19,19 +19,19 @@ public class BarCode implements Comparable{
 	    conversions =new String[]{"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
 	    Barcode = Convert(_zip);
 	}
-	catch(IllegalArgumentException e){
+	catch(NullPointerException e){
 	    System.out.println("String of zip please");
 	}
-	try{
-	    int as = Integer.parseInt(zip);
-	    _zip = zip;
-	    _checkDigit = checkSum();
-	    conversions =new String[]{"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
-	    Barcode = Convert(_zip);
-	}
-	catch(IllegalFormatException b){
-	    System.out.println("String of INTEGER zips");
-	}
+	//	try{
+	//   int as = Integer.parseInt(zip);
+	//   _zip = zip;
+	//   _checkDigit = checkSum();
+	//   conversions =new String[]{"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
+	//   Barcode = Convert(_zip);
+	//	}
+	//	catch(IllegalFormatException b){
+	//  System.out.println("String of INTEGER zips");
+	//	}
 
 
 	
@@ -113,7 +113,7 @@ public class BarCode implements Comparable{
     }
     // postcondition: compares the zip + checkdigit
     public static void main(String[] args){
-	BarCode b1 = new BarCode("12345");
+	BarCode b1 = new BarCode("asdasd");
 	BarCode b2 = new BarCode("12331");
 	System.out.println(b1.toString());
 	//System.out.println(b1._checkDigit);
