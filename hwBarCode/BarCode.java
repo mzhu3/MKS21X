@@ -12,10 +12,28 @@ public class BarCode implements Comparable{
     //               or zip contains a non digit
     //               _zip and _checkDigit are initialized.
     public BarCode(String zip) {
-	_zip = zip;
-	_checkDigit = checkSum();
-	conversions =new String[]{"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
-	Barcode = Convert(_zip);
+	try{
+	    int as = Integer.parseInt(zip);
+	    _zip = zip;
+	    _checkDigit = checkSum();
+	    conversions =new String[]{"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
+	    Barcode = Convert(_zip);
+	}
+	catch(IllegalArgumentException e){
+	    System.out.println("String of zip please");
+	}
+	try{
+	    int as = Integer.parseInt(zip);
+	    _zip = zip;
+	    _checkDigit = checkSum();
+	    conversions =new String[]{"||:::",":::||","::|:|","::||:",":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
+	    Barcode = Convert(_zip);
+	}
+	catch(IllegalFormatException b){
+	    System.out.println("String of INTEGER zips");
+	}
+
+
 	
 
     }
