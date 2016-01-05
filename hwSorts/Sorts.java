@@ -31,15 +31,49 @@ public class Sorts{
 	return small;
     }
     public static void selectionSort(int[]data){
-	int total = data.length;
 	int current =0;
 	int index = 0;
-	for( int i =0;i < data.length; i ++){
-	    current= min(data);
-	    int replace = 
-	}
+	int small = data[0];
+	int save = 0;
+	for( int i =0;i < data.length - 1; i ++){
+	    index = i;
+	    current = data[index];
+	    for(int j = i + 1; j < data.length; j ++){
+		if(data[j] < current){
+		    index = j;
+		    current = data[index];
 		}
+	    }
+	    save = data[index];
+	    data[index] = data[i];
+	    data[i] = save;
+	}
+    }
+    
 
+    public static void main(String[]args){
+	int[] a1 = { 0, 1, 2, 3, 4, 5, 9};
+	//	printArray(a1);
+	selectionSort(a1);
+	printArray(a1);
+	int[] a2 = { 10, 1, 22, 32, 5, 100, 8};
+	selectionSort(a2);
+	//	printArray(a2);
+		printArray(a2);
+	int[] a3 = { 14, 13, 12, 11, 10, 9, 8};
+	//	printArray(a3);
+	selectionSort(a3);
+		printArray(a3);
+	int[] a4 = { 12, 16, 3, 13, 13, 100, 25};
+	//	printArray(a4);
+	selectionSort(a4);
+		printArray(a4);
+    }
+	
+	
+	
+}
+	    
 		    
 	    
 
