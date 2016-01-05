@@ -8,7 +8,7 @@ public class TempConversionWindows extends JFrame implements ActionListener{
    
     public TempConversionWindows(){
 	this.setTitle("Temperature Conversion");
-	this.setSize(600,400);
+	this.setSize(1000,1000);
 	this.setLocation(100,100);
 	this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	pane = this.getContentPane();
