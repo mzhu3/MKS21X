@@ -1,4 +1,4 @@
-
+import java.util.Arrays;
 public class Sorts{
     public static void printArray(int[]data){
 	String ans = "";
@@ -54,15 +54,16 @@ public class Sorts{
 	}
     }
     public static void bubbleSort(int[]data){
-
+	new boolean sorted = false;
 	for(int i = 0; i < data.length; i ++){
+	    if(Arrays.deepEquals((Arrays.sort(data)), data)){
+
 	    for(int j = 0; j <data.length - 1; j ++){
-		if(data[j] > data[j+1]){
+		if(data[j] > data[j+1] && !sorted){
 		    int save = data[j+1];
 		    data[j+1] =data[j];
 		    data[j] = save;
 		}
-	    
 	    
 	    }
 	    printArray(data);
