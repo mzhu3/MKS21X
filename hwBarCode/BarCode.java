@@ -120,7 +120,7 @@ public int compareTo(Object other){
 // postcondition: compares the zip + checkdigit
 public static void main(String[] args){
     //BarCode b1 = new BarCode("asdasd");
-    BarCode b2 = new BarCode("1231b");
+    BarCode b2 = new BarCode("12315");
     System.out.println(b2);
     // System.out.println(b2.toString());
     //System.out.println(b1._checkDigit);

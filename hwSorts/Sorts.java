@@ -20,7 +20,7 @@ public class Sorts{
 		    data[nextindex] = hold;
 		}
 	    }
-	    printArray(data);
+
 	}
     }
     public int min(int[]data){
@@ -50,53 +50,45 @@ public class Sorts{
 	    data[index] = data[i];
 	    data[i] = save;
 	
-	printArray(data);
+
 	}
     }
     public static void bubbleSort(int[]data){
-	new boolean sorted = false;
+        boolean sorted = false;
+        int[] sortedArray = data.clone();
+	Arrays.sort(sortedArray);
 	for(int i = 0; i < data.length; i ++){
-	    if(Arrays.deepEquals((Arrays.sort(data)), data)){
 
 	    for(int j = 0; j <data.length - 1; j ++){
-		if(data[j] > data[j+1] && !sorted){
+		if(!sorted && data[j] > data[j+1]){
 		    int save = data[j+1];
 		    data[j+1] =data[j];
 		    data[j] = save;
 		}
-	    
+		if(Arrays.equals(sortedArray, data)){
+		    i = data.length;
+		    sorted = true;
+		}
 	    }
-	    printArray(data);
+
 	}
+	   
     }
     
-
-    public static void main(String[]args){
-	int[] a1 = { 0, 1, 2, 3, 4, 5, 9};
-	//	printArray(a1);
-	//	selectionSort(a1);
-	//	insertionSort(a1);
-	//	printArray(a1);
-	int[] a2 = { 10, 1, 22, 32, 5, 100, 8};
-	//	insertionSort(a2);
-	//	selectionSort(a2);
-	//	printArray(a2);
-	int[] a3 = { 14, 13, 12, 11, 10, 9, 8};
-	//	insertionSort(a3);
-	//	printArray(a3);
-	//selectionSort(a3);
-	//	printArray(a3);
-	int[] a4 = { 12, 16, 3, 13, 13, 100, 25};
-	//insertionSort(a4);
-	//	printArray(a4);
-	//selectionSort(a4);
-	//	printArray(a4);
-	int[]a5 = {1 , 2,  9, 5, 0, 3};
-	bubbleSort(a5);
+    public static void swap(int[] ary, int a, int c){
+	if(a!=c){
+	    int save =ary[c];
+	    ary[c] =ary[a];
+	    ary[a] = save;
+	}
     }
-	
-	
-	
+    public static void fillRandom(int[] ary){
+	for(int i = 0; i < ary.length; i++){
+	    ary[i] = (int)(Math.pow(-1,(int)(Math.random())))*
+		(int)(Math.random()*Integer.MAX_VALUE);
+	}
+    }
+ 	
 }
 	    
 //help from Billy with optimizing my sort 		    
